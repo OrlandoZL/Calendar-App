@@ -62,17 +62,17 @@ var savedhr9 = localStorage.getItem("text9");
 document.getElementById("9").value = savedhr9;
 
 var currentHour =  moment().hours();
-
-var blockHour = parseInt($(this).attr('id'))
+console.log(currentHour)
 
 $('.time-block').each(function (){ 
+    var blockHour = parseInt($(this).attr('id'));
     if (blockHour < currentHour) {
-        $(this).addClass('past');
+        $(this).addClass("past");
     }
     else if (blockHour === currentHour) {
-        $(this).addClass('present');
+        $(this).addClass("present");
     }
     else if (blockHour > currentHour) {
-        $(this).addClass('future');
+        $(this).addClass("future");
     }
-})
+});
