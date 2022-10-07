@@ -1,14 +1,26 @@
 var currentDayEL = $("#currentDay")
-var textInfo = document.querySelector('textarea')
 
 currentDayEL.text(moment().format("dddd, MMMM Do YYYY"))
 setInterval(function (){
     currentDayEL.text(moment().format("dddd, MMMM Do YYYY"))
 }, 1000)
 
+var currentHour = 
+
+//stores the plans in localstorage
 $('.saveBtn').click(function(){
-    var hr13 = document.getElementById("1").value;
-    localStorage.setItem('text1', hr13)
+    var hr21 = document.getElementById("21").value;
+    localStorage.setItem('text21', hr21)
+    var hr17 = document.getElementById("17").value;
+    localStorage.setItem('text17', hr17)
+    var hr16 = document.getElementById("16").value;
+    localStorage.setItem('text16', hr16)
+    var hr15 = document.getElementById("15").value;
+    localStorage.setItem('text15', hr15)
+    var hr14 = document.getElementById("14").value;
+    localStorage.setItem('text14', hr14)
+    var hr13 = document.getElementById("13").value;
+    localStorage.setItem('text13', hr13)
     var hr12 = document.getElementById("12").value;
     localStorage.setItem('text12', hr12)
     var hr11 = document.getElementById("11").value;
@@ -19,8 +31,24 @@ $('.saveBtn').click(function(){
     localStorage.setItem('text9', hr9)
 })
 
-var savedhr13 = localStorage.getItem("text1");
-document.getElementById("1").value = savedhr13;
+//displays the saved localstorage plans
+var savedhr21 = localStorage.getItem("text21");
+document.getElementById("21").value = savedhr21;
+
+var savedhr17 = localStorage.getItem("text17");
+document.getElementById("17").value = savedhr17;
+
+var savedhr16 = localStorage.getItem("text16");
+document.getElementById("16").value = savedhr16;
+
+var savedhr15 = localStorage.getItem("text15");
+document.getElementById("15").value = savedhr15;
+
+var savedhr14 = localStorage.getItem("text14");
+document.getElementById("14").value = savedhr14;
+
+var savedhr13 = localStorage.getItem("text13");
+document.getElementById("13").value = savedhr13;
 
 var savedhr12 = localStorage.getItem("text12");
 document.getElementById("12").value = savedhr12;
