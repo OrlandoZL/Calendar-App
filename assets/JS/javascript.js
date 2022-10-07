@@ -3,9 +3,7 @@ var currentDayEL = $("#currentDay")
 currentDayEL.text(moment().format("dddd, MMMM Do YYYY"))
 setInterval(function (){
     currentDayEL.text(moment().format("dddd, MMMM Do YYYY"))
-}, 1000)
-
-var currentHour = 
+}, 1000);
 
 //stores the plans in localstorage
 $('.saveBtn').click(function(){
@@ -29,7 +27,7 @@ $('.saveBtn').click(function(){
     localStorage.setItem('text10', hr10)
     var hr9 = document.getElementById("9").value;
     localStorage.setItem('text9', hr9)
-})
+});
 
 //displays the saved localstorage plans
 var savedhr21 = localStorage.getItem("text21");
@@ -61,3 +59,15 @@ document.getElementById("10").value = savedhr10;
 
 var savedhr9 = localStorage.getItem("text9");
 document.getElementById("9").value = savedhr9;
+
+for (var i=9; i<18; i++){
+    if (i < currentHour) {
+        document.getElementById(i.toString()).classList.add("past");
+    }
+    else if (i === currentHour) {
+        document.getElementById(i.toString()).classList.add("present");
+    }
+    else if (i > currentHour) {
+        document.getElementById(i.toString()).classList.add("future");
+    }
+}
