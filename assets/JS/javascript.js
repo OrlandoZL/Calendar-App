@@ -61,16 +61,18 @@ document.getElementById("10").value = savedhr10;
 var savedhr9 = localStorage.getItem("text9");
 document.getElementById("9").value = savedhr9;
 
-var currentHour = rn.getHours();
+var currentHour =  moment().hours();
 
-for (var i = 8; i < 18; i++){
-    if (i < currentHour) {
-        document.getElementById(i.toString()).classList.add('past');
+var blockHour = parseInt($(this).attr('id'))
+
+$('.time-block').each(function (){ 
+    if (blockHour < currentHour) {
+        $(this).addClass('past');
     }
-    else if (i === currentHour) {
-        document.getElementById(i.toString()).classList.add('present');
+    else if (blockHour === currentHour) {
+        $(this).addClass('present');
     }
-    else if (i > currentHour) {
-        document.getElementById(i.toString()).classList.add('future');
+    else if (blockHour > currentHour) {
+        $(this).addClass('future');
     }
-}
+})
